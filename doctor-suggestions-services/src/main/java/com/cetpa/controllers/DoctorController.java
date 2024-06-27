@@ -43,34 +43,5 @@ public class DoctorController
 		return ResponseEntity.status(HttpStatus.FOUND).body(doctorList);
 	}
 	
-//	 @GetMapping("appointment/{name}/{emailID}/{hospital}/{speciality}/{date}")
-//	 public ResponseEntity sendEmail(@PathVariable String name,@PathVariable String emailID,@PathVariable String hospital,@PathVariable String speciality,@PathVariable String date)
-//	 {
-//		 boolean result=doctorService.sendEmail(name,emailID,hospital,speciality,date);
-//			if(result)
-//			{
-//			return new ResponseEntity(HttpStatus.CREATED).ok("Email is send successfully");
-//			}
-//			else
-//			{
-//				return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR).ok("Email not send");
-//			}
-//	 }
-	
-	
-	
-	
-	@PostMapping("appointment")
-	 public ResponseEntity sendEmail(@RequestBody AppointmentEntity appo)
-	 {
-		 boolean result=doctorService.sendEmail(appo.getName(),appo.getEmailID(),appo.getHospital(),appo.getSpeciality(),appo.getDate());
-			if(result)
-			{
-			return new ResponseEntity(HttpStatus.CREATED).ok("Email is send successfully");
-			}
-			else
-			{
-				return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR).ok("Email not send");
-			}
-	 }
+
 }
